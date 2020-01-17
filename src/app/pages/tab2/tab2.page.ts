@@ -55,9 +55,9 @@ export class Tab2Page implements OnInit {
 
     marker.on('drag', () => {
       const coord = marker.getLngLat();
-      const coords = `${coord.lat},${coord.lng}`
+      const coords = `${coord.lat},${coord.lng}`;
       console.log(coords);
-     this.post.coords = coords;
+      this.post.coords = coords;
     });
  }
 
