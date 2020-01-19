@@ -1,4 +1,6 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Post } from 'src/app/interfaces/interfaces';
+import { PostsService } from '../../services/posts.service';
 
 declare var mapboxgl: any;
 
@@ -9,7 +11,7 @@ declare var mapboxgl: any;
 })
 export class MapaPage implements OnInit, AfterViewInit {
 
-  constructor() { }
+  constructor(private postsService: PostsService) { }
 
   ngOnInit() {
   }
@@ -18,7 +20,7 @@ export class MapaPage implements OnInit, AfterViewInit {
 
   mapboxgl.accessToken = 'pk.eyJ1IjoicGFvbWludGEiLCJhIjoiY2szeGk2bHZ2MTNodDNvdDYxZGk5YXVxcSJ9.2kRLqmEg67ROgZSiD60kPQ';
   const map = new mapboxgl.Map({
-  container: 'map',
+  container: 'mapa',
   style: 'mapbox://styles/mapbox/streets-v11',
   center: [-77.72006049593814, 0.8104170982511971],
   zoom: 13
@@ -30,9 +32,16 @@ export class MapaPage implements OnInit, AfterViewInit {
     map.resize();
 
   // Marker
-    // new mapboxgl.Marker()
-    //   .setLngLat([this.lng, this.lat])
+    // this.postsService.getPosts()
+    // .subscribe (resp => {
+    //   const latLng = this.posts.push(...resp.posts[].coords.split(','));
+    //   const lat = Number(latLng[0]);
+    //   const lng = Number(latLng[1]);
+    //   new mapboxgl.Marker()
+    //  .setLngLat([lng, lat])
     //   .addTo(map);
+
+    // });
     const marker2 = new mapboxgl.Marker().setLngLat([-77.70837679346927, 0.8310250778040328]).addTo(map);
     const marker3 = new mapboxgl.Marker().setLngLat([-77.71104290923007, 0.831030441657816]).addTo(map);
     const marker4 = new mapboxgl.Marker().setLngLat([-77.71111264666446, 0.831400547551089]).addTo(map);
@@ -56,13 +65,13 @@ export class MapaPage implements OnInit, AfterViewInit {
     }
 
     map.addLayer({
-      'id': '3d-buildings',
-      'source': 'composite',
+      id: '3d-buildings',
+      source: 'composite',
       'source-layer': 'building',
-      'filter': ['==', 'extrude', 'true'],
-      'type': 'fill-extrusion',
-      'minzoom': 15,
-      'paint': {
+      filter: ['==', 'extrude', 'true'],
+      type: 'fill-extrusion',
+      minzoom: 15,
+      paint: {
         'fill-extrusion-color': '#aaa',
 
         // use an 'interpolate' expression to add a smooth transition effect to the

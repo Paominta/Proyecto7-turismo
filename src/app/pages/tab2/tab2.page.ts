@@ -41,7 +41,7 @@ export class Tab2Page implements OnInit {
 
     mapboxgl.accessToken = 'pk.eyJ1IjoicGFvbWludGEiLCJhIjoiY2szeGk2bHZ2MTNodDNvdDYxZGk5YXVxcSJ9.2kRLqmEg67ROgZSiD60kPQ';
     const map = new mapboxgl.Map({
-    container: 'map',
+    container: 'mapa1',
                   style: 'mapbox://styles/mapbox/streets-v11',
                   center: [-77.72006049593814, 0.8104170982511971],
                   zoom: 15
