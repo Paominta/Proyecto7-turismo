@@ -15,6 +15,8 @@
     costo?: string;
     contactos?: string;
     coords?: string;
+    estado?: string;
+    recorrido?: string;
     usuario?: Usuario;
     created?: string;
   }

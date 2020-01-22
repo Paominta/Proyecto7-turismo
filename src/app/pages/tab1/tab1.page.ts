@@ -12,6 +12,7 @@ export class Tab1Page implements OnInit {
   posts: Post[] = [];
 
   habilitado = true;
+  textoBuscar = '';
 
   constructor(private postsService: PostsService) { }
 
@@ -22,6 +23,10 @@ export class Tab1Page implements OnInit {
       .subscribe(post => {
         this.posts.unshift(post);
       });
+  }
+
+  buscar(event){
+    this.textoBuscar = event.detail.value;
   }
 
   recargar(event?) {

@@ -28,6 +28,8 @@ export class Tab2Page implements OnInit {
     costo: '',
     contactos: '',
     coords: null,
+    estado: 'pendiente',
+    recorrido: '',
     posicion: false
   };
 
@@ -76,6 +78,8 @@ export class Tab2Page implements OnInit {
       costo: '',
       contactos: '',
       coords: null,
+      estado: 'pendiente',
+      recorrido: '',
       posicion: false
     };
 

@@ -1,18 +1,7 @@
+
 <div class="post">
 
-  <!-- <ion-item lines="none">
-
-    <ion-avatar slot="start">
-      <img src="/assets/avatars/{{post.usuario.avatar}}" />
-    </ion-avatar>
-
-    <ion-label>
-      <h3>{{post.usuario.nombre}}</h3>
-      <h5>{{post.usuario.email}}</h5>
-    </ion-label>
-  </ion-item> -->
-
-
+ 
   <!-- ngIf imgs -->
   <ion-slides pager="true" *ngIf="post.imgs.length > 1">
     <ion-slide  *ngFor="let img of post.imgs"
@@ -54,7 +43,7 @@
 
     <ion-item lines="none">
       <ion-button color="primary"              
-                   href="https://img360prueba1.000webhostapp.com/">Ver Imagen 360</ion-button>
+                   href="{{post.recorrido}}">Ver Recorrido</ion-button>                  
     </ion-item>
 
   <ion-item lines="none">

@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { PostsService } from 'src/app/services/posts.service';
+import { UsuarioService } from 'src/app/services/usuario.service';
 
 @Component({
   selector: 'app-tabs',
@@ -7,6 +9,12 @@ import { Component } from '@angular/core';
 })
 export class TabsPage {
 
-  constructor() {}
+  constructor(private postsService: PostsService,
+              private usuarioService : UsuarioService) {}
+
+  logout() {
+    this.postsService.paginaPosts = 0;
+    this.usuarioService.logout();
+  }
 
 }
