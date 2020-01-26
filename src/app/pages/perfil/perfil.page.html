@@ -1,0 +1,94 @@
+<ion-header>
+  <ion-toolbar>
+  
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<h1 class="ion-text-center"><b>Actualizar perfil</b></h1>
+
+<app-avatar-selector (avatarSel)="usuario.avatar = $event"
+                        [avatarActual]="usuario.avatar"></app-avatar-selector>
+
+  <form (ngSubmit)="actualizar( fActualizar )" #fActualizar>
+      <ion-row>
+        <ion-col>
+          
+            <ion-list>
+              
+              <ion-item>
+                <ion-label><b>Email:</b></ion-label>
+                <ion-input name="email"
+                           type="email"
+                           [(ngModel)]="usuario.email"
+                           required></ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label><b>Nombre:</b></ion-label>
+                <ion-input name="nombre"
+                           type="text"
+                           [(ngModel)]="usuario.nombre"
+                           required></ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label><b>Género:</b></ion-label>
+                <ion-select name ="genero" placeholder="Elija una" okText="Ok" cancelText="Cancelar" [(ngModel)]="usuario.genero">
+                <ion-select-option>Femenino</ion-select-option>
+                <ion-select-option >Masculino</ion-select-option>
+              </ion-select>
+              </ion-item>
+
+              <ion-item>
+                <ion-label><b>Edad:</b></ion-label>
+                <ion-input name="edad"
+                           type="text"
+                           [(ngModel)]="usuario.edad"
+                           required></ion-input>
+              </ion-item>
+
+
+              <ion-item>
+                <ion-label><b>Pais:</b></ion-label>
+                <ion-input name="pais"
+                           type="text"
+                           [(ngModel)]="usuario.pais"
+                           required></ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label><b>Ciudad:</b></ion-label>
+                <ion-input name="ciudad"
+                           type="text"
+                           [(ngModel)]="usuario.ciudad"
+                           required></ion-input>
+              </ion-item>
+
+              <ion-item>
+                <ion-label><b>Intereses:</b></ion-label>
+                <ion-input name="intereses"
+                           type="text"
+                           [(ngModel)]="usuario.intereses"
+                           required></ion-input>
+              </ion-item>
+
+             
+
+
+            </ion-list>
+        </ion-col>
+      </ion-row>
+      
+      <ion-row>
+        <ion-col text-center>
+          <ion-button type="submit"
+                      color="primary"
+                      shape="round">
+          Actualizar
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+
+</ion-content>

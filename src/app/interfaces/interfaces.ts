@@ -26,6 +26,11 @@
     _id?: string;
     nombre?: string;
     email?: string;
+    edad?: string;
+    genero?: string;
+    pais?: string;
+    ciudad?: string;
+    intereses?: string;
     password?: string;
 
   }

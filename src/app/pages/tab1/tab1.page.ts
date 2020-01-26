@@ -16,8 +16,8 @@ export class Tab1Page implements OnInit {
 
   constructor(private postsService: PostsService) { }
 
-  ngOnInit() {
-    this.siguientes();
+  ngOnInit(event?) {
+    this.siguientes(event, true);
 
     this.postsService.nuevoPost
       .subscribe(post => {
@@ -25,7 +25,7 @@ export class Tab1Page implements OnInit {
       });
   }
 
-  buscar(event){
+  buscar(event) {
     this.textoBuscar = event.detail.value;
   }
 

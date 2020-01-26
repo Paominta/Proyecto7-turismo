@@ -3,8 +3,8 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { UsuarioGuard } from './guards/usuario.guard';
 
 const routes: Routes = [
-  { 
-    path: 'main', 
+  {
+    path: 'main',
     loadChildren: './pages/tabs/tabs.module#TabsPageModule',
     // canActivate: [ UsuarioGuard] 
     canLoad: [UsuarioGuard]
@@ -13,11 +13,15 @@ const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'main/tabs/tab1'
+    redirectTo: 'main/tabs/menu'
   },
   { path: 'menu', loadChildren: './pages/menu/menu.module#MenuPageModule' },
   { path: 'mapa', loadChildren: './pages/mapa/mapa.module#MapaPageModule' },
- 
+
+
+
+
+
 
 ];
 @NgModule({

@@ -17,8 +17,8 @@ export class UsuarioService {
   private usuario: Usuario = {};
 
   constructor(private http: HttpClient,
-    private storage: Storage,
-    private navCtrl: NavController) { }
+              private storage: Storage,
+              private navCtrl: NavController) { }
 
 
   login(email: string, password: string) {

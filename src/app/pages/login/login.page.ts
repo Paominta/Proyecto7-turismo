@@ -20,12 +20,18 @@ export class LoginPage implements OnInit {
     password: '12345'
   };
 
-  registerUser: Usuario ={
-    email: 'test1',
-    password: '123456',
-    nombre: 'Test1',
-    avatar: 'av-1.png'
-  }
+  registerUser: Usuario = {
+    email: '',
+    password: '',
+    nombre: '',
+    avatar: 'usuario.png',
+    edad: '',
+    genero: '',
+    pais: '',
+    ciudad: '',
+    intereses: ''
+
+  };
 
   constructor(private usuarioService: UsuarioService,
               private navCtrl: NavController,
@@ -41,7 +47,7 @@ export class LoginPage implements OnInit {
 
     const valido = await this.usuarioService.login( this.loginUser.email, this.loginUser.password);
 
-    if (valido){
+    if (valido) {
       //navegar al tabs
       this.navCtrl.navigateRoot('main/tabs/tab1',{animated: true})
     }else{

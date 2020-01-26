@@ -8,7 +8,7 @@ import { Post } from 'src/app/interfaces/interfaces';
 })
 export class PostsComponent implements OnInit {
 
-  @Input() posts: Post[]=[];
+  @Input() posts: Post[] = [];
 
   constructor() { }
 

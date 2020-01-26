@@ -1,0 +1,66 @@
+<div class="post">
+
+ 
+  <!-- ngIf imgs -->
+  <ion-slides pager="true" *ngIf="post.imgs.length > 1">
+    <ion-slide  *ngFor="let img of post.imgs"
+                class="image-slide"
+                [style]=" (img | imagen: post.usuario._id) | domSanitizer">
+    </ion-slide>
+  </ion-slides>
+
+  <ion-slides *ngIf="post.imgs.length === 1" [options]="slideSoloOpts">
+    <ion-slide class="image-slide"
+               [style]=" ( post.imgs[0] | imagen: post.usuario._id) | domSanitizer">
+    </ion-slide>
+  </ion-slides>
+
+
+
+  <ion-item lines="none">
+    <ion-label text-wrap>
+        <h1><b>{{post.nombre}}</b></h1>
+    </ion-label>
+  </ion-item>
+
+  <ion-row justify-content-around>
+    <ion-col>
+      <ion-button expand="block" fill="clear" (click)="visitado()">
+        <ion-icon slot="icon-only" [name]="corazon"></ion-icon>Visitado
+      </ion-button>
+    </ion-col>
+    <ion-col>
+
+    </ion-col>
+    <ion-col>
+      <ion-button expand="block" fill="clear" (click)="favorito()" >
+        <ion-icon slot="icon-only" name="bookmark" [color]="marcado"></ion-icon>Guardar
+      </ion-button>
+    </ion-col>
+  </ion-row>
+
+  <ion-item lines="none">
+    <ion-button color="primary">Ver más...</ion-button>                  
+  </ion-item>
+
+
+  <ion-item lines="none">
+    <ion-label><b>Dirección: </b></ion-label>
+    <ion-label text-wrap>
+        {{post.direccion}}
+    </ion-label>
+  </ion-item>
+
+  <!-- <ion-item lines="none">
+  
+ </ion-item> -->
+
+  <ion-item lines="none">
+    <ion-label><b>Horario: </b></ion-label>
+    <ion-label text-wrap>
+        {{post.horario}}
+    </ion-label>
+  </ion-item>
+
+
+</div>

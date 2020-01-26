@@ -15,7 +15,7 @@ import { NavController } from '@ionic/angular';
 })
 export class Tab3Page implements OnInit {
 
-  usuario: Usuario= {};
+  usuario: Usuario = {};
 
   constructor(private usuarioService : UsuarioService,
               private uiService: UiServiceService,
@@ -31,9 +31,11 @@ export class Tab3Page implements OnInit {
 
   }
 
+  
+
   async actualizar(fActualizar: NgForm){
 
-    if (fActualizar.invalid){return;}
+    if (fActualizar.invalid) {return;}
 
     const actualizado = await this.usuarioService.actualizarUsuario(this.usuario);
 
@@ -51,4 +53,20 @@ export class Tab3Page implements OnInit {
     this.postsService.paginaPosts = 0;
     this.usuarioService.logout();
   }
+
+  abrirPerfil() {
+  this.navCtrl.navigateForward(`/main/tabs/tab3/perfil`);
+  }
+
+  abrirAgregar() {
+    this.navCtrl.navigateForward(`/main/tabs/tab3/tab2`);
+    }
+
+  abrirGuardados() {
+    this.navCtrl.navigateForward(`/main/tabs/tab3/guardados`);
+    }
+
+  abrirVisitados() {
+    this.navCtrl.navigateForward(`/main/tabs/tab3/visitados`);
+   }
 }

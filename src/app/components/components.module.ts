@@ -6,17 +6,27 @@ import { IonicModule } from '@ionic/angular';
 import { PipesModule } from '../pipes/pipes.module';
 import { AvatarSelectorComponent } from './avatar-selector/avatar-selector.component';
 import { MapaComponent } from './mapa/mapa.component';
+import { LugaresComponent } from './lugares/lugares.component';
+import { LugarComponent } from './lugar/lugar.component';
 
 @NgModule({
+  entryComponents: [
+    PostComponent
+  ],
   declarations: [
     PostsComponent,
     PostComponent,
     AvatarSelectorComponent,
-    MapaComponent
+    MapaComponent,
+    LugarComponent,
+    LugaresComponent
   ],
-  exports:[
+  exports: [
     PostsComponent,
-    AvatarSelectorComponent
+    AvatarSelectorComponent,
+    LugaresComponent,
+    PostComponent,
+    LugarComponent
   ],
   imports: [
     CommonModule,

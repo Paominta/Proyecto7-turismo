@@ -32,6 +32,10 @@ const routes: Routes = [
           {
             path: '',
             loadChildren: '../menu/menu.module#MenuPageModule'
+          },
+          {
+            path: 'categoria/:cat',
+            loadChildren: '../categoria/categoria.module#CategoriaPageModule'
           }
         ]
       },
@@ -45,6 +49,18 @@ const routes: Routes = [
           {
             path: 'tab2',
             loadChildren: '../tab2/tab2.module#Tab2PageModule'
+          },
+          {
+            path: 'perfil',
+            loadChildren: '../perfil/perfil.module#PerfilPageModule'
+          },
+          {
+            path: 'guardados',
+            loadChildren: '../guardados/guardados.module#GuardadosPageModule'
+          },
+          {
+            path: 'visitados',
+            loadChildren: '../visitados/visitados.module#VisitadosPageModule'
           }
         ]
       },

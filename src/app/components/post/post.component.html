@@ -25,18 +25,18 @@
 
     <ion-row justify-content-around>
       <ion-col>
-        <ion-button expand="block" fill="clear" >
-          <ion-icon slot="icon-only" name="heart-empty"></ion-icon>
+        <ion-button expand="block" fill="clear" (click)="visitado()">
+          <ion-icon slot="icon-only" [name]="corazon"></ion-icon>Visitado
         </ion-button>
       </ion-col>
       <ion-col>
-        <ion-button expand="block" fill="clear">
-          <ion-icon slot="icon-only" name="map" coloe="medium"></ion-icon>
-        </ion-button>
+        <!-- <ion-button expand="block" fill="clear">
+          <ion-icon slot="icon-only" name="map" color="medium"></ion-icon>
+        </ion-button> -->
       </ion-col>
       <ion-col>
-        <ion-button expand="block" fill="clear" >
-          <ion-icon slot="icon-only" name="bookmark"></ion-icon>
+        <ion-button expand="block" fill="clear" (click)="favorito()" >
+          <ion-icon slot="icon-only" name="bookmark" [color]="marcado"></ion-icon>Guardar
         </ion-button>
       </ion-col>
     </ion-row>

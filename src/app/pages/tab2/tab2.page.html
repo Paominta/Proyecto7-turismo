@@ -11,7 +11,7 @@
     <ion-buttons slot="end">
       <ion-button (click)="crearPost()"
                   [disabled]= "post.mensaje.length < 1 || cargandoGeo"
-                  color="tertiary">
+                  color="primary">
         Agregar
       </ion-button>
     </ion-buttons>
@@ -36,7 +36,7 @@
       <ion-label >Categoría</ion-label>
     <ion-select placeholder="Elija una" okText="Ok" cancelText="Cancelar" [(ngModel)]="post.categoria">
       <ion-select-option>Naturaleza</ion-select-option>
-      <ion-select-option >Acuático</ion-select-option>
+      <ion-select-option >Piscinas</ion-select-option>
       <ion-select-option >Iglesias</ion-select-option>
       <ion-select-option >Parques</ion-select-option>
       <ion-select-option>Restaurantes</ion-select-option>

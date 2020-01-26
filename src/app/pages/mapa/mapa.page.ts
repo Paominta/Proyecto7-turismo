@@ -73,6 +73,30 @@ export class MapaPage implements OnInit, AfterViewInit {
     type: 'Feature',
     properties: {
     description:
+    '<strong>ESTADIO OLIMPICO </strong><p><b>Dirección:</b><b>Horario:</b> De lunes a domingo de 8:00 am a 18:00 pm</p>',
+    },
+    geometry: {
+    type: 'Point',
+    coordinates: [-77.7225566436413, 0.8121445647721544]
+    }
+    },
+
+    {
+      type: 'Feature',
+      properties: {
+      description:
+      '<strong>HOTEL SAN ANDRÉS </strong><p><b>Dirección:</b><b>Horario:</b> De lunes a domingo de 8:00 am a 18:00 pm</p>',
+      },
+      geometry: {
+      type: 'Point',
+      coordinates: [-77.71919640802605, 0.8109535576072204]
+      }
+      },
+
+  {
+    type: 'Feature',
+    properties: {
+    description:
     '<strong>PARQUE ISIDRO AYORA</strong><p><b>Dirección:</b>Av Manabi 63, Tulcán</p><p><b>Horario: </b>Abierto las 24 horas</p>',
     },
     geometry: {

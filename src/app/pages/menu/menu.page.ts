@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataLocalService } from 'src/app/services/data-local.service';
 
 @Component({
   selector: 'app-menu',
@@ -33,11 +34,15 @@ export class MenuPage implements OnInit {
 
     }
   ];
-  constructor() { }
+  constructor(public dataLocal: DataLocalService) { }
 
   ngOnInit() {
   }
 
+  abrirCategoria(categoria) {
+    console.log ('categoria', categoria);
+    this.dataLocal.abrirCategoria(categoria);
 
+  }
 
 }

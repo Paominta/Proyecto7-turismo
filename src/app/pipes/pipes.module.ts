@@ -4,17 +4,19 @@ import { DomSanitizerPipe } from './dom-sanitizer.pipe';
 import { ImageSanitizerPipe } from './image-sanitizer.pipe';
 import { ImagenPipe } from './imagen.pipe';
 import { FiltroPipe } from './filtro.pipe';
+import { FiltrocatPipe } from './filtrocat.pipe';
 
 @NgModule({
   declarations: [
     DomSanitizerPipe,
     ImageSanitizerPipe,
-    ImagenPipe, FiltroPipe],
+    ImagenPipe, FiltroPipe, FiltrocatPipe],
   exports: [
     DomSanitizerPipe,
     ImageSanitizerPipe,
     ImagenPipe,
-    FiltroPipe
+    FiltroPipe,
+    FiltrocatPipe
   ]
 })
 export class PipesModule { }
