@@ -1,17 +1,35 @@
 <ion-header no-border>
-  <ion-toolbar>
+  <ion-toolbar color="dark">
+   
+  </ion-toolbar >
+  <ion-toolbar >
+    <ion-title><b>{{cat}}</b></ion-title>
   
   </ion-toolbar>
   
 </ion-header>
 
-<ion-content color="light" >
+<ion-content color="light">
   
   <!-- Refresher -->
 
-   <ion-refresher slot="fixed" (ionRefresh)="recargar($event)">
+   <!-- <ion-refresher slot="fixed" (ionRefresh)="recargar($event)">
     <ion-refresher-content></ion-refresher-content>
-  </ion-refresher>
+  </ion-refresher> -->
+
+<!--Slides-->
+
+<ion-slides pager="true">
+  <ion-slide *ngFor="let slide of slides" (click)="obtenerCategoria(slide.categoria)">
+     <div>
+         <img [src]="slide.img">
+     </div>
+     <div>
+         <h3></h3>
+     </div>
+  </ion-slide>
+
+</ion-slides>
 
   <!-- Posts -->
   <app-posts [posts]="posts | filtrocat: cat"  ></app-posts>

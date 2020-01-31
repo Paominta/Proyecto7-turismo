@@ -3,6 +3,7 @@ import { NavController, ToastController } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
 import { Post } from '../interfaces/interfaces';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -13,7 +14,8 @@ visitados: Post[] = [];
 
   constructor(private navCtrl: NavController,
               private storage: Storage,
-              private toastCtrl: ToastController) {
+              private toastCtrl: ToastController,
+              ) {
                 this.cargarFavoritos();
                 this.cargarVisitados();
                }

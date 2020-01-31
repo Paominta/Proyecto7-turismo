@@ -17,7 +17,7 @@ import { Geolocation } from '@ionic-native/geolocation/ngx';
 import { Camera } from '@ionic-native/camera/ngx';
 import { FileTransfer } from '@ionic-native/file-transfer/ngx';
 import { PipesModule } from './pipes/pipes.module';
-
+import { EmailComposer } from '@ionic-native/email-composer/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -36,6 +36,7 @@ import { PipesModule } from './pipes/pipes.module';
     Geolocation,
     Camera,
     FileTransfer,
+    EmailComposer,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

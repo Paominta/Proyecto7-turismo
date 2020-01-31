@@ -31,6 +31,7 @@ export class PostsService {
     return this.http.get<RespuestaPosts>(`${URL}/posts/?pagina=${this.paginaPosts}`);
   }
 
+
   crearPost(post) {
 
     const headers = new HttpHeaders({

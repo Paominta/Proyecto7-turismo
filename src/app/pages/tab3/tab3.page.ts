@@ -5,7 +5,7 @@ import { NgForm } from '@angular/forms';
 import { UiServiceService } from 'src/app/services/ui-service.service';
 import { PostsService } from 'src/app/services/posts.service';
 import { NavController } from '@ionic/angular';
-
+import { EmailComposer } from '@ionic-native/email-composer/ngx';
 
 
 @Component({
@@ -20,7 +20,8 @@ export class Tab3Page implements OnInit {
   constructor(private usuarioService : UsuarioService,
               private uiService: UiServiceService,
               private postsService: PostsService,
-              private navCtrl: NavController) {}
+              private navCtrl: NavController,
+              private emailComposer: EmailComposer) {}
 
 
 
@@ -31,9 +32,8 @@ export class Tab3Page implements OnInit {
 
   }
 
-  
 
-  async actualizar(fActualizar: NgForm){
+  async actualizar(fActualizar: NgForm) {
 
     if (fActualizar.invalid) {return;}
 
@@ -68,5 +68,22 @@ export class Tab3Page implements OnInit {
 
   abrirVisitados() {
     this.navCtrl.navigateForward(`/main/tabs/tab3/visitados`);
+   }
+
+   enviarCorreo() {
+    const email = {
+      to: 'paominta0596@gmail.com',
+      cc: '',
+      // bcc: ['john@doe.com', 'jane@doe.com'],
+      attachments: [
+
+      ],
+      subject: 'Sugerencia de nuevo lugar',
+      body: 'Ingrese la información a cerca del lugar que desea agregar',
+      isHtml: true
+    };
+
+    // Send a text message using default options
+    this.emailComposer.open(email);
    }
 }

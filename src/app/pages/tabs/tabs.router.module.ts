@@ -27,14 +27,10 @@ const routes: Routes = [
         ]
       },
       {
-        path: 'menu',
+        path: 'categoria',
         children: [
           {
             path: '',
-            loadChildren: '../menu/menu.module#MenuPageModule'
-          },
-          {
-            path: 'categoria/:cat',
             loadChildren: '../categoria/categoria.module#CategoriaPageModule'
           }
         ]

@@ -5,19 +5,19 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class FiltrocatPipe implements PipeTransform {
 
-  transform(arreglo: any[], cat?: string): any[] {
+transform(arreglo: any[], cat?: string): any[] {
 
-    if (cat === '') {
+  if (cat === '') {
       return arreglo;
     }
 
-    cat = cat.toLowerCase();
-    return arreglo.filter(item => {
-      return item.categoria
+  cat = cat.toLowerCase();
+  return arreglo.filter(item => {
+      return item.categoria.toLowerCase()
       .includes(cat);
     });
 
-    console.log('arreglooo', arreglo);
+
   }
 
 }

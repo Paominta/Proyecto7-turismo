@@ -6,16 +6,16 @@ const routes: Routes = [
   {
     path: 'main',
     loadChildren: './pages/tabs/tabs.module#TabsPageModule',
-    // canActivate: [ UsuarioGuard] 
+    // canActivate: [ UsuarioGuard]
     canLoad: [UsuarioGuard]
   },
   { path: 'login', loadChildren: './pages/login/login.module#LoginPageModule' },
   {
     path: '',
     pathMatch: 'full',
-    redirectTo: 'main/tabs/menu'
+    redirectTo: 'main/tabs/categoria'
   },
-  { path: 'menu', loadChildren: './pages/menu/menu.module#MenuPageModule' },
+  // { path: 'menu', loadChildren: './pages/menu/menu.module#MenuPageModule' },
   { path: 'mapa', loadChildren: './pages/mapa/mapa.module#MapaPageModule' },
 
 

@@ -11,7 +11,8 @@ export class MenuPage implements OnInit {
   slides = [
     {
       img: 'assets/lagunasVerdes.jpg',
-      titulo: 'Lagunas Verdes'
+      titulo: 'Lagunas Verdes',
+    
 
     },
     {

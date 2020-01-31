@@ -49,7 +49,7 @@ export class LoginPage implements OnInit {
 
     if (valido) {
       //navegar al tabs
-      this.navCtrl.navigateRoot('main/tabs/tab1',{animated: true})
+      this.navCtrl.navigateRoot('main/tabs/categoria',{animated: true})
     }else{
       //mostrar alerta de usuario y contraseña incorrectos
       this.uiService.alertaInformativa('Usuario y contraseña no son correctos');

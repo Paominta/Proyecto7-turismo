@@ -12,10 +12,44 @@ export class CategoriaPage implements OnInit {
 
 
     posts: Post[] = [];
-     cat = '';
+    cat = '';
+
+    //  cat = this.route.snapshot.paramMap.get('cat');
 
     habilitado = true;
     textoBuscar = '';
+
+    slides = [
+      {
+        img: 'assets/naturaleza.jpg',
+        categoria: 'Naturaleza'
+
+      },
+      {
+        img: 'assets/parques.jpg',
+        categoria: 'Parques'
+
+      },
+      {
+        img: 'assets/iglesia.jpg',
+        categoria: 'Iglesias'
+      },
+      {
+        img: 'assets/piscinas.jpg',
+        categoria: 'Piscinas'
+
+      },
+      {
+        img: 'assets/restaurantes.jpg',
+        categoria: 'Restaurantes'
+
+      },
+      {
+        img: 'assets/hoteles.jpg',
+        categoria: 'Hoteles'
+
+      },
+    ];
 
     constructor(private postsService: PostsService,
                 private route: ActivatedRoute
@@ -27,12 +61,16 @@ export class CategoriaPage implements OnInit {
         .subscribe(post => {
           this.posts.unshift(post);
         });
-      this.cat = this.route.snapshot.paramMap.get('cat');
+
     }
 
-    // buscar(event) {
-    //   this.cat = event.detail.value;
-    // }
+    buscar(event) {
+      this.cat = event.detail.value;
+    }
+
+    obtenerCategoria(categoria){
+      this.cat = categoria;
+    }
 
 
     recargar(event?) {
@@ -44,7 +82,7 @@ export class CategoriaPage implements OnInit {
 
     siguientes(event?, pull: boolean = false) {
 
-      this.postsService.getPosts(pull)
+    this.postsService.getPosts(pull)
         .subscribe(resp => {
           console.log(resp);
           this.posts.push(...resp.posts);
