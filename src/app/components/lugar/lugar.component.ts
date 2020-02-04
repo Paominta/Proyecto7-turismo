@@ -3,6 +3,7 @@ import { Post } from 'src/app/interfaces/interfaces';
 import { DataLocalService } from 'src/app/services/data-local.service';
 import { ModalController } from '@ionic/angular';
 import { PostComponent } from '../post/post.component';
+import { DetalleComponent } from '../detalle/detalle.component';
 
 
 @Component({
@@ -43,15 +44,15 @@ corazon = 'heart-empty';
     this.corazon = (existe1) ? 'heart' : 'heart-empty';
   }
 
-// async verPost(id: string) {
-// const modal = await this.modalCtrl.create({
-//   component: PostComponent,
-//   componentProps: {
-//     id
-//   }
-// });
+async verPost(id: string) {
+const modal = await this.modalCtrl.create({
+  component: DetalleComponent,
+  componentProps: {
+    id
+  }
+});
 
-// modal.present();
+modal.present();
 
-// }
+}
 }

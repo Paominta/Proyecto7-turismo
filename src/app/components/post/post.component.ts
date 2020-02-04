@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Post } from 'src/app/interfaces/interfaces';
 import { DataLocalService } from 'src/app/services/data-local.service';
+import { PostsService } from '../../services/posts.service';
 
 
 
@@ -11,7 +12,7 @@ import { DataLocalService } from 'src/app/services/data-local.service';
   styleUrls: ['./post.component.scss'],
 })
 export class PostComponent implements OnInit {
-@Input() id;
+
 @Input() post: Post = {};
 
 
@@ -25,7 +26,8 @@ marcado = 'medium';
 corazon = 'heart-empty';
 
 
-  constructor(private dataLocal: DataLocalService) { }
+  constructor(private dataLocal: DataLocalService,
+              private postService: PostsService) { }
 
   ngOnInit() {
   this.dataLocal.existePost(this.post._id)

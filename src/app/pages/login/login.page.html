@@ -10,7 +10,7 @@
 
           <ion-row>
             <ion-col>
-              <img src="/assets/avatars/usuario.png">
+              <img src="/assets/avatars/Logotipo.png" height="1000" width="1000">
             </ion-col>
           </ion-row>
         
@@ -20,7 +20,7 @@
                 <ion-list>
                   
                   <ion-item>
-                    <ion-label>Email</ion-label>
+                    <ion-label><b>Email:</b></ion-label>
                     <ion-input name="email"
                                 type="email"
                                 [(ngModel)]="loginUser.email"
@@ -28,7 +28,7 @@
                   </ion-item>
 
                   <ion-item>
-                    <ion-label>Password</ion-label>
+                    <ion-label><b>Contraseña:</b></ion-label>
                     <ion-input name="password"
                                 type="password"
                                 [(ngModel)]="loginUser.password"
@@ -44,7 +44,7 @@
               <ion-button type="submit"
                           color="primary"
                           shape="round">
-                Login
+                Ingresar
               </ion-button>
             </ion-col>
           </ion-row>
@@ -74,7 +74,7 @@
                         <ion-list>
                             
                             <ion-item>
-                            <ion-label>Email</ion-label>
+                            <ion-label><B>Email</B></ion-label>
                             <ion-input name="email" 
                                         type="email"
                                         [(ngModel)]="registerUser.email"
@@ -82,7 +82,7 @@
                             </ion-item>
 
                             <ion-item>
-                            <ion-label>Nombre</ion-label>
+                            <ion-label><B>Nombre:</B></ion-label>
                             <ion-input name="nombre"
                                         type="text"
                                         [(ngModel)]="registerUser.nombre"
@@ -90,7 +90,7 @@
                             </ion-item>
 
                             <ion-item>
-                            <ion-label>Password</ion-label>
+                            <ion-label><b>Contreseña:</b></ion-label>
                             <ion-input name="password"
                                         type="password"
                                         [(ngModel)]="registerUser.password"

@@ -2,8 +2,8 @@
   <ion-toolbar color="dark">
    
   </ion-toolbar >
-  <ion-toolbar >
-    <ion-title><b>{{cat}}</b></ion-title>
+  <ion-toolbar>
+    <ion-title ><b>{{cat}}</b></ion-title>
   
   </ion-toolbar>
   
@@ -24,15 +24,15 @@
      <div>
          <img [src]="slide.img">
      </div>
-     <div>
+     <!-- <div>
          <h3></h3>
-     </div>
+     </div> -->
   </ion-slide>
 
 </ion-slides>
 
   <!-- Posts -->
-  <app-posts [posts]="posts | filtrocat: cat"  ></app-posts>
+  <app-lugares [posts]="posts | filtrocat: cat"  ></app-lugares>
 
 
   <!-- Infinite Scroll -->

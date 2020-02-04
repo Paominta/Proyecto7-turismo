@@ -8,14 +8,16 @@ import { AvatarSelectorComponent } from './avatar-selector/avatar-selector.compo
 import { MapaComponent } from './mapa/mapa.component';
 import { LugaresComponent } from './lugares/lugares.component';
 import { LugarComponent } from './lugar/lugar.component';
+import { DetalleComponent } from './detalle/detalle.component';
 
 @NgModule({
   entryComponents: [
-    PostComponent
+    DetalleComponent
   ],
   declarations: [
     PostsComponent,
     PostComponent,
+    DetalleComponent,
     AvatarSelectorComponent,
     MapaComponent,
     LugarComponent,
@@ -26,6 +28,7 @@ import { LugarComponent } from './lugar/lugar.component';
     AvatarSelectorComponent,
     LugaresComponent,
     PostComponent,
+    DetalleComponent,
     LugarComponent
   ],
   imports: [

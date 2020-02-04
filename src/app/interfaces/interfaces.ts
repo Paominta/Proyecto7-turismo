@@ -3,6 +3,12 @@
     pagina: number;
     posts: Post[];
   }
+  export interface RespuestaPost {
+    ok: boolean;
+    id: string;
+    post?: Post;
+  }
+
 
   export interface Post {
     imgs?: string[];

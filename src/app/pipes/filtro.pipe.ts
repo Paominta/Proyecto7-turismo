@@ -8,16 +8,15 @@ export class FiltroPipe implements PipeTransform {
 
   transform(arreglo: any[], texto?: string): any[] {
 
-    // console.log('areglooo', arreglo);
-    // console.log('palabra', texto);
     if (texto === '') {
       return arreglo;
     }
     texto = texto.toLowerCase();
 
     return arreglo.filter(item => {
-      return item.nombre.toLowerCase()
-      .includes(texto);
+      return item.nombre.toLowerCase().includes(texto) ||
+      item.categoria.toLowerCase().includes(texto) ||
+      item.mensaje.toLowerCase().includes(texto);
     });
 
   }

@@ -10,11 +10,18 @@ declare var mapboxgl: any;
   styleUrls: ['./mapa.page.scss'],
 })
 export class MapaPage implements OnInit, AfterViewInit {
-
+  posts: Post[] = [];
   constructor(private postsService: PostsService) { }
 
-  ngOnInit() {
-  }
+  ngOnInit(pull: boolean = false) {
+  //   this.postsService.getPosts(pull)
+  //   .subscribe(resp => {
+  //     console.log(resp);
+  //     this.posts.push(...resp.posts);
+  // });
+  //   const latLng = this.posts[0].coords.split(',');
+  //   console.log(latLng);
+}
 
   ngAfterViewInit() {
 
@@ -30,7 +37,12 @@ export class MapaPage implements OnInit, AfterViewInit {
   // tslint:disable-next-line: only-arrow-functions
   map.on('load', function() {
   // Add a layer showing the places.
+
   map.resize();
+
+  map.addControl(new mapboxgl.NavigationControl());
+
+
   map.loadImage(
     '/assets/pin/lugares.png',
     function(error, image) {
@@ -49,7 +61,7 @@ export class MapaPage implements OnInit, AfterViewInit {
   properties: {
   description:
   // tslint:disable-next-line: max-line-length
-  '<strong>MERCADO CENTRAL</strong><p><b>Dirección:</b>Boyacá, Tulcán</p><p><b>Horario:</b> De lunes a domingo de 7.00 am a 17:pm</p>',
+  '<strong>MERCADO CENTRAL </strong><p><b>Dirección:</b>Boyacá, Tulcán</p><p><b>Horario:</b> De lunes a domingo de 7.00 am a 17:pm</p>',
   },
   geometry: {
   type: 'Point',

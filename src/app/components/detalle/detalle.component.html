@@ -1,31 +1,35 @@
+<ion-content>
+  <div class="post">
 
-<div class="post">
   
     <ion-button color="primary" 
                  expand="block"             
                  href="{{post.recorrido}}">Ver Recorrido Virtual 360°</ion-button>                  
- 
+  
+  
   <!-- ngIf imgs -->
-  <ion-slides pager="true" *ngIf="post.imgs.length > 1">
+  <!-- <ion-slides pager="true" *ngIf="post.imgs.length > 1">
     <ion-slide  *ngFor="let img of post.imgs"
                 class="image-slide"
                 [style]=" (img | imagen: post.usuario._id) | domSanitizer">
     </ion-slide>
   </ion-slides>
-
+  
   <ion-slides *ngIf="post.imgs.length === 1" [options]="slideSoloOpts">
     <ion-slide class="image-slide"
                [style]=" ( post.imgs[0] | imagen: post.usuario._id) | domSanitizer">
     </ion-slide>
-  </ion-slides>
+  </ion-slides> -->
 
+ 
+  
   <!-- mapa -->
   <app-mapa [coords]="post.coords" *ngIf="post.coords"></app-mapa>
-
-
+  
+  
   <!-- post -->
-
-
+  
+  
     <ion-row justify-content-around>
       <ion-col>
         <ion-button expand="block" fill="clear" (click)="visitado()">
@@ -33,9 +37,7 @@
         </ion-button>
       </ion-col>
       <ion-col>
-        <!-- <ion-button expand="block" fill="clear">
-          <ion-icon slot="icon-only" name="map" color="medium"></ion-icon>
-        </ion-button> -->
+
       </ion-col>
       <ion-col>
         <ion-button expand="block" fill="clear" (click)="favorito()" >
@@ -43,46 +45,46 @@
         </ion-button>
       </ion-col>
     </ion-row>
-
   
-
+  
+  
   <ion-item lines="none">
     <ion-label text-wrap>
         <h1><b>{{post.nombre}}</b></h1>
     </ion-label>
   </ion-item>
-
+  
   <ion-item lines="none">
     <ion-label text-wrap>
         {{post.mensaje | slice: 0: oculto}}...</ion-label>
       </ion-item>
-
+  
   <ion-item lines="none">
     <ion-label color="primary"
               (click)="oculto=10000"
               *ngIf="oculto!==10000">Continuar leyendo...</ion-label>
   </ion-item>
-
+  
   <ion-item lines="none">
     <ion-label><b>Dirección:</b></ion-label>
    </ion-item>
-
+  
   <ion-item lines="none">
     <ion-label text-wrap>
         {{post.direccion}}
     </ion-label>
   </ion-item>
-
+  
   <ion-item lines="none">
   <ion-label><b>Horario de atención:</b></ion-label>
- </ion-item>
-
+  </ion-item>
+  
   <ion-item lines="none">
     <ion-label text-wrap>
         {{post.horario}}
     </ion-label>
   </ion-item>
-
+  
   <ion-item lines="none">
     <ion-label><b>Precio:</b></ion-label>
    </ion-item>
@@ -91,7 +93,7 @@
         {{post.costo}}
     </ion-label>
   </ion-item>
- 
+  
   <ion-item lines="none">
     <ion-label><b>Contactos:</b></ion-label>
    </ion-item>
@@ -100,6 +102,17 @@
         {{post.contactos}}
     </ion-label>
   </ion-item>
-
-
-</div>
+  
+  </div>
+ 
+</ion-content>
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button (click)="regresar()">
+        <ion-icon slot="start" name="arrow-round-back"></ion-icon>
+        <ion-label>Regresar</ion-label>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

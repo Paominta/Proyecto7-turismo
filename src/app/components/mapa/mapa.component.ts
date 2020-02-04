@@ -17,6 +17,7 @@ export class MapaComponent implements OnInit {
   ngOnInit() {
 
 
+
     const latLng = this.coords.split(',');
     const lat = Number(latLng[0]);
     const lng = Number(latLng[1]);
@@ -26,9 +27,12 @@ export class MapaComponent implements OnInit {
       container: this.mapa.nativeElement,
       style: 'mapbox://styles/mapbox/streets-v11',
       center: [lng, lat],
-      zoom: 15
+      zoom: 15,
     });
 
+    map.addControl(new mapboxgl.NavigationControl());
+    map.addControl(new mapboxgl.FullscreenControl(map.resize()));
+    
 
     const marker = new mapboxgl.Marker()
       .setLngLat( [lng, lat] )

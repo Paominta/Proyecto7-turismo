@@ -1,7 +1,7 @@
 import { Injectable, EventEmitter } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
-import { RespuestaPosts, Post } from '../interfaces/interfaces';
+import { RespuestaPosts, Post, RespuestaPost } from '../interfaces/interfaces';
 import { UsuarioService } from './usuario.service';
 import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer/ngx';
 const URL = environment.url;
@@ -32,6 +32,12 @@ export class PostsService {
   }
 
 
+  getPostId(id: string) {
+
+  return this.http.get<RespuestaPost>(`${URL}/posts/ide?id=${id}`);
+  }
+
+
   crearPost(post) {
 
     const headers = new HttpHeaders({
@@ -51,7 +57,7 @@ export class PostsService {
   }
 
 
-  subirImagen( img:string ){
+  subirImagen( img: string ){
 
     const options: FileUploadOptions = {
       
