@@ -31,8 +31,8 @@ export class MapaComponent implements OnInit {
     });
 
     map.addControl(new mapboxgl.NavigationControl());
-    map.addControl(new mapboxgl.FullscreenControl(map.resize()));
-    
+    // map.addControl(new mapboxgl.FullscreenControl(map.resize()));
+
 
     const marker = new mapboxgl.Marker()
       .setLngLat( [lng, lat] )

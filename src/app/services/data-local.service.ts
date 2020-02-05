@@ -15,6 +15,7 @@ visitados: Post[] = [];
   constructor(private navCtrl: NavController,
               private storage: Storage,
               private toastCtrl: ToastController,
+
               ) {
                 this.cargarFavoritos();
                 this.cargarVisitados();
@@ -114,4 +115,5 @@ return this.visitados;
     const existe1 = this.visitados.find(vis => vis._id === id);
     return (existe1) ? true : false;
   }
+
 }

@@ -7,7 +7,7 @@ import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
 
 import {HttpClientModule} from '@angular/common/http'
-
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { IonicStorageModule } from '@ionic/storage';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -36,6 +36,7 @@ import { EmailComposer } from '@ionic-native/email-composer/ngx';
     Geolocation,
     Camera,
     FileTransfer,
+    InAppBrowser,
     EmailComposer,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],

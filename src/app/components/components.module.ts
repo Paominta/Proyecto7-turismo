@@ -34,7 +34,7 @@ import { DetalleComponent } from './detalle/detalle.component';
   imports: [
     CommonModule,
     IonicModule,
-    PipesModule
+    PipesModule,
   ]
 })
 export class ComponentsModule { }

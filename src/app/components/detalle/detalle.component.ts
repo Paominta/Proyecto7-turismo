@@ -3,7 +3,7 @@ import { PostsService } from '../../services/posts.service';
 import { DataLocalService } from 'src/app/services/data-local.service';
 import { Post } from 'src/app/interfaces/interfaces';
 import { ModalController } from '@ionic/angular';
-
+import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 
 
 @Component({
@@ -31,7 +31,9 @@ import { ModalController } from '@ionic/angular';
 
     constructor(private dataLocal: DataLocalService,
                 private postService: PostsService,
-                private modalCtrl: ModalController) { }
+                private modalCtrl: ModalController,
+                private inAppBrowser: InAppBrowser
+                ) { }
 
     ngOnInit() {
     console.log('id', this.id);
@@ -61,6 +63,10 @@ import { ModalController } from '@ionic/angular';
 
     regresar() {
       this.modalCtrl.dismiss();
+    }
+
+    abrirUrl(url: string) {
+      this.inAppBrowser.create(this.post.recorrido);
     }
 
   }

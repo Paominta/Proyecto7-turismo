@@ -3,8 +3,9 @@
 
   
     <ion-button color="primary" 
-                 expand="block"             
-                 href="{{post.recorrido}}">Ver Recorrido Virtual 360°</ion-button>                  
+                 expand="block"  
+                 (click)="abrirUrl()"        
+                  >Ver Recorrido Virtual 360°</ion-button>                  
   
   
   <!-- ngIf imgs -->
@@ -107,7 +108,7 @@
  
 </ion-content>
 <ion-footer>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-buttons slot="start">
       <ion-button (click)="regresar()">
         <ion-icon slot="start" name="arrow-round-back"></ion-icon>
