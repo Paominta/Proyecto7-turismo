@@ -23,7 +23,7 @@
     coords?: string;
     estado?: string;
     recorrido?: string;
-    usuario?: Usuario;
+    usuario?: Admin;
     created?: string;
   }
 
@@ -37,6 +37,14 @@
     pais?: string;
     ciudad?: string;
     intereses?: string;
+    password?: string;
+
+  }
+
+  export interface Admin {
+    _id?: string;
+    nombre?: string;
+    email?: string;
     password?: string;
 
   }
